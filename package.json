@@ -1,6 +1,6 @@
 {
   "name": "neighbourhood-map",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Final project for JavaScript Design Patterns course (by Udacity).",
   "main": "prod/index.html",
   "scripts": {
