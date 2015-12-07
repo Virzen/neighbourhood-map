@@ -1,0 +1,16 @@
+neighbourhood-map/
+    dev/                // Development directory
+        js/
+        css/
+        static/
+            img/
+            fonts/
+        *.html
+
+    prod/               // Production directory
+        js/
+        css/
+        static/
+            img/
+            fonts/
+        *.html
