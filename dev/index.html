@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nieghbourhood map</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .primary-header {
+            height: 10vh;
+            overflow-y: hidden;
+        }
+
+        .map {
+            width: 100vw;
+            height: 90vh;
+        }
+    </style>
+</head>
+<body>
+    <header class="primary-header">
+        <h1>Neighbourhood map</h1>
+    </header>
+    <section class="map"></section>
+
+    <script>
+        var map;
+
+        function initMap() {
+            map = new google.maps.Map(document.querySelector('.map'), {
+                center: {lat: 53.1269068, lng: 18.0282105},
+                zoom: 12
+            });
+        }
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD70zbYAP0n1SAxCxg7LfrJCanbpEvGRLA&callback=initMap">
+    </script>
+</body>
+</html>
