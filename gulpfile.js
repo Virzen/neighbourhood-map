@@ -9,6 +9,6 @@ var deployPath = 'D:/Zbiory/Git Workspace/virzen.github.io/neighbourhood-map';
 
 
 gulp.task('deploy', function () {
-    gulp.src('dev/*').
+    gulp.src('dev/**/*').
         pipe(gulp.dest(deployPath));
 });
