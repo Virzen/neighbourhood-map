@@ -9,7 +9,7 @@
     "plugins": {
         "complete_strings": {},
         "node": {},
-        "lint": {},
+        "lint": false,
         "angular": {},
         "requirejs": {},
         "modules": {},
