@@ -20,11 +20,15 @@
         body {
             font-size: 1rem;
             font-family: sans-serif;
+			padding-top: 1px;
         }
+
+		.primary-nav {
+		}
 
 
         .map {
-            height: 90vh;
+            height: 80vh;
         }
     </style>
 </head>
@@ -34,15 +38,15 @@
 
 		<!-- <nav>
 			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li>Search: <input type="search" placeholder="e.g. opera"></li>
 			</ul>
 		</nav> -->
     </header>
     <section class="map"></section>
 
-    <script src="js/mapconfig.js"></script>
+	<script src="js/knockout-3.4.0.js"></script>
+    <!-- <script src="js/mapconfig.js"></script> -->
+	<script src="js/main.js"></script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD70zbYAP0n1SAxCxg7LfrJCanbpEvGRLA&callback=initMap">
     </script>
