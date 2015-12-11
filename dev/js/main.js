@@ -50,14 +50,10 @@
 					title: place.name,
 					map: self.map
 				});
+
+				self.markers.push(marker);
 			}
-			// var marker = new google.maps.Marker({
-			// 	position: defCoords,
-			// 	title: 'Hello World!',
-			// 	animation: google.maps.Animation.DROP,
-			// 	map: map,
-			// });
-			//
+
 			// var infoWindow = new google.maps.InfoWindow({
 			// 	content: '<h2>Some text</h2><p>Even more text</p>',
 			// });
