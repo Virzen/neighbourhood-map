@@ -40,6 +40,12 @@
 		self.places = ko.observableArray(model.places);
 		self.markers = ko.observableArray([]);
 
+		/**
+		 * Assings settings to objects for Google Maps script to use at
+		 * initialization.
+		 * It is attached to the window object so the Google Maps script, which
+		 * load later, can access it.
+		 */
 		win.initMap = function () {
 			self.map = new google.maps.Map(document.querySelector('.map'), {
 				center: model.startCoords,
@@ -67,6 +73,11 @@
 			// }, false);
 		};
 
+		/**
+		 * Filters markers on the map based on target input's contents
+		 * @param 	{object} 		data current model value; unused
+		 * @param 	{Event object} 	event info
+		 */
 		self.filterMarkers = function (data, event) {
 			var queryText = event.target.value.toLowerCase();
 			var placeName;
