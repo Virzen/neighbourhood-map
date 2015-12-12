@@ -37,8 +37,8 @@
 		var self = this;
 
 		self.map = {};
-		self.places = model.places;
-		self.markers = [];
+		self.places = ko.observableArray(model.places);
+		self.markers = ko.observableArray([]);
 
 		win.initMap = function () {
 			self.map = new google.maps.Map(document.querySelector('.map'), {
@@ -46,11 +46,12 @@
 				zoom: 12
 			});
 
-			for (var place of self.places) {
+			for (var place of self.places()) {
 				var marker = new google.maps.Marker({
 					position: place.position,
 					title: place.name,
-					map: self.map
+					map: self.map,
+					label: place.name.substr(0, 1)
 				});
 
 				self.markers.push(marker);
@@ -65,6 +66,25 @@
 			// 	infoWindow.open(map, marker);
 			// }, false);
 		};
+
+		self.filterMarkers = function (data, event) {
+			var queryText = event.target.value.toLowerCase();
+			var placeName;
+
+			for (var marker of self.markers()) {
+				placeName = marker.title.toLowerCase();
+
+				if (placeName.search(queryText) === -1) {
+					if (marker.map !== null)
+						marker.setMap(null);
+				}
+				else {
+					if (marker.map === null)
+						marker.setMap(self.map);
+				}
+			}
+		};
+
 	};
 
 
