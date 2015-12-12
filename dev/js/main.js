@@ -1,4 +1,6 @@
-(function () {
+(function (win, doc) {
+	'use strict';
+
 	var model = {
 		startCoords: {
 			lat: 53.1269068,
@@ -38,13 +40,13 @@
 		self.places = model.places;
 		self.markers = [];
 
-		window.initMap = function () {
+		win.initMap = function () {
 			self.map = new google.maps.Map(document.querySelector('.map'), {
 				center: model.startCoords,
 				zoom: 12
 			});
 
-			for (place of self.places) {
+			for (var place of self.places) {
 				var marker = new google.maps.Marker({
 					position: place.position,
 					title: place.name,
@@ -67,4 +69,4 @@
 
 
 	ko.applyBindings(new ViewModel());
-})();
+})(window, document);
